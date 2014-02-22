@@ -1,5 +1,17 @@
 <div ng-include="'partials/navbar'"></div>
 
+<form role="form">
+  <div class="form-group">
+    <label for="Title">Title</label>
+    <input type="text" class="form-control" id="Title" placeholder="Enter Title" ng-model="title">
+    <label for="StartDate">Start Date</label>
+    <input type="text" class="form-control" id="StartDate" placeholder="Start Date" ng-model="start">
+    <label for="EndDate">End Date</label>
+    <input type="text" class="form-control" id="StartDate" placeholder="End Date" ng-model="end">
+  </div>
+  <button type="button" class="btn btn-info" ng-click="addEvent(title,start,end)">Add Event</button>
+</form>
+
 <div style="padding-top:100px" ui-calendar="" ng-model="eventSources"></div>
 
 <div class="jumbotron">
