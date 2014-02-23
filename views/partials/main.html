@@ -1,9 +1,31 @@
 <div ng-include="'partials/navbar'"></div>
-
 <div class="alert alert-success" ng-show="alertMessage">{{alertMessage}}</div>
 <div class="row">
-  <div class="col-md-4">
-    <form role="form">
+
+  <div class="col-md-9">
+
+    <div ui-calendar="uiConfig.calendar" ng-model="eventSources"></div>
+  <button class="btn btn-success btn-lg pull-right" data-toggle="modal" data-target="#myModal">
+  Add A Recipe
+</button>
+  </div>
+  <div class="col-md-3">
+    <h3>Recipes</h3>
+      <ul class="nav nav-stacked nav-pills">
+        <li ng-repeat="recipe in awesomeThings"><a href="{{recipe.url}}" target="_blank">{{recipe.title}}</a></li>
+      </ul>
+  </div>
+
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Add A Recipe!</h4>
+      </div>
+      <div class="modal-body">
+            <form role="form">
       <div class="form-group">
         <label for="Title">Title</label>
         <input type="text" class="form-control" id="Title" placeholder="Enter Title" ng-model="title">
@@ -12,14 +34,13 @@
         <label for="Date">Date</label>
         <input type="text" class="form-control" id="Date" placeholder="Enter Date" ng-model="date">
       </div>
-      <button type="button" class="btn btn-info pull-right" ng-click="addEvent(title,url,date)">Add Recipe</button>
+      
     </form>
-    <h3>Recipes</h3>
-    <ul>
-      <li ng-repeat="recipe in awesomeThings"><a href="{{recipe.url}}" target="_blank">{{recipe.title}}</a></li>
-    </ul>
+      </div>
+            <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="addEvent(title,url,date)">Add Recipe</button>
+      </div>
   </div>
-  <div class="col-md-8">
-    <div ui-calendar="uiConfig.calendar" ng-model="eventSources"></div>
   </div>
-</div>
+  </div>
