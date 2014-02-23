@@ -6,12 +6,12 @@
       <div class="form-group">
         <label for="Title">Title</label>
         <input type="text" class="form-control" id="Title" placeholder="Enter Title" ng-model="title">
-        <label for="StartDate">Start Date</label>
-        <input type="text" class="form-control" id="StartDate" placeholder="Start Date" ng-model="start">
-        <label for="EndDate">End Date</label>
-        <input type="text" class="form-control" id="StartDate" placeholder="End Date" ng-model="end">
+        <label for="Url">Url</label>
+        <input type="text" class="form-control" id="Url" placeholder="Enter Url" ng-model="url">
+        <label for="Date">Date</label>
+        <input type="text" class="form-control" id="Date" placeholder="Enter Date" ng-model="date">
       </div>
-      <button type="button" class="btn btn-info pull-right" ng-click="addEvent(title,start,end)">Add Recipe</button>
+      <button type="button" class="btn btn-info pull-right" ng-click="addEvent(title,url,date)">Add Recipe</button>
     </form>
     <h3>Recipes</h3>
     <ul>
