@@ -34,13 +34,6 @@ var passport = require('./lib/config/passport');
 
 var app = express();
 
-app.configure('production', function() {
-	app.use(function(req,res,next){
-    	var reqType = req.headers["x-forwarded-proto"];
-    	reqType == 'https' ? next() : res.redirect("https://" + req.headers.host + req.url);
-	});
-});
-
 // Express settings
 require('./lib/config/express')(app);
 
