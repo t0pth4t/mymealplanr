@@ -34,6 +34,16 @@ var passport = require('./lib/config/passport');
 
 var app = express();
 
+app.configure('production', function() {
+  return app.use(forceSsl(req, res, next)(function() {
+    if (req.header('x-forwarded-proto' !== 'https')) {
+      return res.redirect("https://" + (req.header('host')) + req.url);
+    } else {
+      return next();
+    }
+  }));
+});
+
 // Express settings
 require('./lib/config/express')(app);
 
