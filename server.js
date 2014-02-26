@@ -33,7 +33,7 @@ require('./lib/config/dummydata');
 var passport = require('./lib/config/passport');
 
 var app = express();
-
+app.use(express.compress());
 // Express settings
 require('./lib/config/express')(app);
 
