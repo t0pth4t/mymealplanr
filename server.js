@@ -1,5 +1,12 @@
 'use strict';
 
+if(process.env.NODETIME_ACCOUNT_KEY) {
+  require('nodetime').profile({
+    accountKey: process.env.NODETIME_ACCOUNT_KEY,
+    appName: 'mymealplanr' // optional
+  });
+}
+
 var express = require('express'),
     path = require('path'),
     fs = require('fs'),
