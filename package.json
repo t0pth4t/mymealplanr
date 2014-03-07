@@ -15,8 +15,7 @@
     "passport-local": "latest",
     "ejs": "~0.8.4",
     "helmet": "latest",
-    "nodetime":"latest",
-    "connect-memcached": "*"
+    "nodetime":"latest"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
