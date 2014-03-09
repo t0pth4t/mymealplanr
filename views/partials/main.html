@@ -1,9 +1,8 @@
 <div ng-include="'partials/navbar'"></div>
-<div class="alert alert-success" ng-show="alertMessage">{{alertMessage}}</div>
 <div class="row">
 
   <div class="col-md-9">
-  <div class="panel panel-default">
+  <div class="panel panel-default" id="calendar-panel" data-spy="affix">
     <div class="panel-body">
       <div ui-calendar="uiConfig.calendar" ng-model="eventSources" calendar="calendar"></div>
     </div>
@@ -15,11 +14,22 @@
 
   </div>
   <div class="col-md-3">
+  <div class="alert alert-success" ng-show="alertMessage">{{alertMessage}}</div>
     <h3><span ng-show="currentUser"> {{currentUser.name}}'s</span> Recipes</h3>
       <ul class="nav nav-stacked nav-pills" id="drag-queen">
-        <li ng-repeat="recipe in recipes" makedraggable=""><a href="{{recipe.source}}" target="_blank">{{recipe.title}}</a></li>
+       <li ng-repeat="recipe in recipes" makedraggable="">
+        <div class="recipe-card">
+          <div class="recipe-image">
+            <div class="recipe-overlay">
+              <div class="recipe-title">
+                <h3><a href="{{recipe.source}}" target="_blank">{{recipe.title}}</a></h3>
+              </div>
+            </div>
+          </div>
+      </div>
+      </li>
       </ul>
-  </div>
+
 
 </div>
 
@@ -55,4 +65,4 @@
       </div>
   </div>
   </div>
-  </div>
+  </div></div>
