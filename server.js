@@ -41,6 +41,7 @@ var passport = require('./lib/config/passport');
 
 var app = express();
 app.use(express.compress());
+app.disable('x-powered-by');
 // Express settings
 require('./lib/config/express')(app);
 
