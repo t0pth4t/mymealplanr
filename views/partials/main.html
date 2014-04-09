@@ -46,6 +46,8 @@
         <input type="text" class="form-control" id="Title" placeholder="Enter Title" ng-model="title">
         <label for="Url">Url</label>
         <input type="text" class="form-control" id="Url" placeholder="Enter Url" ng-model="url">
+        <label for="Image">Image Source</label>
+        <input type="text" class="form-control" id="Image" placeholder="Enter Image Source" ng-model="image">
         <label for="Date">Date</label>
             <p class="input-group">
               <input type="text" class="form-control" datepicker-popup="shortDate" is-open="opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" ng-required="true" close-text="Close" ng-model="date">
@@ -61,7 +63,7 @@
       </div>
             <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" ng-click="createRecipe(title,url,date)">Add Recipe</button>
+        <button type="button" class="btn btn-primary" ng-click="createRecipe(title,url,image,date)">Add Recipe</button>
       </div>
   </div>
   </div>
